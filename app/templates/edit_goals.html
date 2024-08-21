@@ -1,0 +1,142 @@
+{% extends "base.html" %} {% block title %}Log food{% endblock %} {% block
+content %}
+
+<h1 class="subtitle">Your Goals</h1>
+
+<form method="POST" id="goal">
+
+<div class="d-flex flex-wrap align-content-stretch goals m-2 p-2 rounded">
+  <div class="flex-fill border border-light m-2 p-5 rounded grow-1">
+    <h2 align="center">Personal Info</h2>
+    <br>
+
+    <div class="row">
+      <label for="colFormLabel" class="col-sm-2 col-form-label mb-2" align="center">Name</label>
+      <div class="col-sm">
+        <input type="text" class="form-control" name="new_name" value="{{user.first_name}}" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="colFormLabel" class="col-sm-2 col-form-label mb-2" align="center">Email</label>
+      <div class="col-sm">
+        <input type="email" class="form-control" name="new_email"  value="{{user.email}}" required>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <label for="colFormLabel" class="col-sm-2 col-form-label mb-2" align="center">Height (in)</label>
+      <div class="col-sm">
+        <input type="number" class="form-control" name="new_height" 
+        placeholder="{%if not user.height%}Height has not been set (in) {%else%} {{user.height}} in{%endif%}" 
+        value="{{user.height}}" 
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="colFormLabel" class="col-sm-2 col-form-label mb-2" align="center">Weight (lbs) </label>
+      <div class="col-sm">
+        <input type="number" class="form-control" name="new_weight" 
+        placeholder="{%if not user.weight %}Weight has not been set (lbs) {%else%} {{user.weight}} lbs{%endif%}"
+        value="{{user.weight}}"
+        />
+      </div>
+    </div>
+<br>
+<br>
+  </div>
+
+
+  <div class="flex-fill border border-light m-2 p-5 rounded">
+    <h2 align="center">Macro Goals</h4>
+        <br>
+        <div class="row">
+          <label for="colFormLabel" class="col-sm-2 col-form-label mb-2">Calories</label>
+          <div class="col-sm">
+            <input type="number" class="form-control" name="new_calories" 
+            placeholder="{%if not user.calories%}Calorie goal has not been set{%else%} {{user.calories}}{%endif%}"
+            value="{{user.calories}}"
+            />
+          </div>
+        </div>
+    
+        <div class="row">
+          <label for="colFormLabel" class="col-sm-2 col-form-label mb-2" align="center">Protein (g)</label>
+          <div class="col-sm">
+            <input type="number" class="form-control" name="new_protein" 
+            placeholder="{% if not user.protein %}Protein goal has not been set{% else %} {{user.protein}}{% endif %}"
+            value="{{user.protein}}"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="colFormLabel" class="col-sm-2 col-form-label mb-2" align="center">Carbs (g)</label>
+          <div class="col-sm">
+            <input type="number" class="form-control" name="new_carbs" 
+            placeholder="{% if not user.carbs %}Carb goal has not been set{% else %} {{user.carbs}}{% endif %}"
+            value="{{user.carbs}}"
+            />
+          </div>
+        </div>
+    
+        <div class="row">
+          <label for="colFormLabel" class="col-sm-2 col-form-label mb-2" align="center">Fat (g)</label>
+          <div class="col-sm">
+            <input type="number" class="form-control" name="new_fat" 
+            placeholder="{%if  not user.fat %}Fat goal has not been set{% else %} {{user.fat}}{% endif %}"
+            value="{{user.fat}}" 
+            />
+          </div>
+        </div>
+  </div>
+  <!-- <div class="flex-fill border border-light m-2 p-5 rounded grow-1">
+    <h4 align="center">Customize Colors</h4>
+    <div class="row">
+      <div class="col color-row">
+        <input
+          type="color"
+          class="form-control form-control-color color-select"
+          id="choose_pr_color"
+          value="#0e1a54"
+          title="choose color"
+          data-id="pr_color"
+        />
+        <p></p>
+        <label class="form-label">Choose Background color</label>
+      </div>
+
+      <div class="col color-row">
+        <input
+          type="color"
+          class="form-control form-control-color color-select"
+          id="choose_bg_color"
+          value="#0e1a54"
+          title="choose color"
+          data-id="bg_color"
+        />
+        <p></p>
+        <label class="form-label">Choose Primary color</label>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+<div align="center">
+  <a>
+    <button type="submit" for="goal" class="btn btn-outline-light font-weight-bold">
+      Save Changes
+    </button>
+  </a>
+</form>
+
+  <a href="/goals" class="btn btn-outline-light font-weight-bold">
+      Go Back
+  </a>
+</div>
+
+
+{% endblock %}

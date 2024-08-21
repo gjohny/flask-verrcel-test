@@ -1,0 +1,388 @@
+* {
+  border-color: red;
+  border-style: dotted;
+  border-width: 1px;
+}
+
+:root {
+  --font-family: Monaco;
+  --normal-font: 100;
+  --bold-font: 300;
+  --bolder-font: 500;
+  --bg-color: #0e1a54;
+  --primary-color: #f0f1f4;
+  --secondary-color: #8ab6e2;
+  --primary-shadow: #22313f;
+  --secondary-shadow: #e6daa4;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 1.7rem;
+  --transition: 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+}
+
+.background {
+  background-color: var(--bg-color);
+  min-height: 100dvh;
+  width: 100%;
+}
+
+.back a {
+  padding: 0.5em;
+}
+
+.title {
+  width: 100dvw;
+  height: 7dvh;
+  color: var(--primary-color);
+  display: grid;
+  align-items: center;
+  font-size: 2em;
+}
+
+.collapse {
+  background-color: var(--primary-shadow);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  background-color: var(--bg-color);
+}
+
+.nav-item {
+  color: var(--primary-color);
+}
+
+.nav-brand {
+  height: 2em;
+  font-size: 2em;
+  align-items: center;
+}
+
+.brand:hover {
+  text-decoration: wavy;
+  color: #8ab6e2;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.inline {
+  height: 7dvh;
+  font-size: 2dvh;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitle {
+  height: 7dvh;
+  font-size: 4dvh;
+  color: var(--primary-color);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.subheading {
+  height: min-content;
+  color: var(--primary-color);
+}
+.subheading p {
+  font-size: 1.5em;
+  color: var(--primary-color);
+}
+
+.bars {
+  width: 100%;
+  padding: 1em;
+  background-color: gray;
+  color: aqua;
+}
+
+hr {
+  margin-top: 1em;
+  border-top: 1px solid --primary-color;
+  border: 0;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  color: var(--primary-color);
+  font-weight: bolder;
+  padding: 1em;
+  border-color: var(--primary-color);
+  border-width: 2px;
+  border-style: solid;
+}
+
+.float {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.form-group {
+  color: var(--primary-color);
+  max-width: 70vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group input {
+  background-color: transparent;
+}
+
+.form-control {
+  background: transparent;
+  border-radius: 5px;
+  border-width: 2px;
+  margin-bottom: 1rem;
+}
+
+.form-control:focus {
+  background: var(--primary-color);
+  opacity: 70%;
+}
+
+.form-control:hover {
+  background: var(--primary-color);
+  opacity: 70%;
+}
+
+.form-control::placeholder {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+.btn_ {
+  margin: 0;
+}
+
+.choice {
+  align-items: center;
+  justify-content: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+body {
+  background-color: var(--primary-color);
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+.items {
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-gap: 10px;
+  cursor: pointer;
+  border: 3px solid var(--primary-color);
+  transition: all 0.6s;
+  color: var(--primary-color);
+  min-height: fit-content;
+  overflow: hidden;
+}
+
+.col {
+  padding: 1em;
+  margin: 0.5em;
+  height: 30vh;
+  width: 10vh;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: var(--primary-color);
+  border-style: solid;
+  min-height: fit-content;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.icon-wrapper,
+.project-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper i {
+  font-size: 6em;
+  color: var(--primary-color);
+  transition: all 0.6s;
+  margin: 5%;
+}
+
+/* .icon-wrapper {
+  align-self: end;
+} */
+
+.project-name {
+  align-self: start;
+  height: min-content;
+}
+
+.project-name p {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--bg-color);
+  transform: translateY(0px);
+  transition: all 0.5s;
+  color: azure;
+}
+
+.items:hover {
+  border: 3px solid var(--primary-color);
+  background-color: azure;
+
+  & .project-name p {
+    transform: translateY(-10px);
+    color: var(--bg-color);
+  }
+  & .icon-wrapper i {
+    transform: translateY(5px);
+    color: var(--bg-color);
+  }
+}
+
+.table th,
+td {
+  text-align: center;
+  align-content: center;
+}
+
+.icon-green {
+  background-color: green;
+  color: var(--primary-color);
+}
+
+.icon-red {
+  background-color: red;
+  color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade {
+  animation: fadeIn 4s;
+  animation-fill-mode: forwards;
+}
+
+.custom-select {
+  --webkit-appearance: none;
+  width: 75%;
+  height: 2em;
+  background-color: var(--primary-shadow);
+  border-radius: 10px;
+  color: var(--primary-color);
+  font-size: 1.2em;
+}
+
+.custom-select option {
+  height: 3em;
+  background-color: var(--primary-shadow);
+  padding: 2em;
+  font-size: 1.2em;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.grow {
+  transition: all 0.3s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+  color: black;
+}
+
+.goals {
+  color: var(--primary-color);
+}
+
+.col-sm > input {
+  background-color: var(--primary-shadow);
+}
+
+.col-sm > .dis {
+  background-color: transparent;
+}
+
+.color-row {
+  height: fit-content;
+}
+
+.color-select {
+  background-color: rgb(138, 138, 138);
+  height: 3em;
+  width: 4em;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 30dvh;
+  background-color: #1a3147;
+  border-color: aliceblue;
+  color: aliceblue;
+  align-items: end;
+  justify-content: center;
+  padding: 1em;
+}
+
+.footer p {
+  font-size: 1.2em;
+}
+
+.logo {
+  height: 3em;
+  width: 3em;
+  margin-bottom: 18px;
+}
+
+.logo:hover {
+  text-decoration: none;
+  border: 0 !important;
+  outline: none;
+  border-width: 0px;
+  outline-width: 0px;
+  border-bottom: none;
+  height: 4em;
+  width: 4em;
+  transition: 0.2s;
+}

@@ -1,0 +1,221 @@
+{% extends "base.html" %} {% block title %}Log food{% endblock %} {% block
+content %}
+<div class="back d-flex">
+  <a href="/" class="back btn btn-outline-light"> < back</a>
+</div>
+<h1 class="subtitle">Your Goals</h1>
+
+<div
+  class="d-flex flex-wrap align-content-stretch goals m-2 p-2 rounded"
+  data-value="{{color}}"
+>
+  <div class="flex-fill border border-light m-2 p-5 rounded grow-1">
+    <h2 align="center">Personal Info</h2>
+    <br />
+
+    <div class="row">
+      <label
+        for="colFormLabel"
+        class="col-sm-2 col-form-label mb-2"
+        align="center"
+        >Name</label
+      >
+      <div class="col-sm">
+        <input
+          type="text"
+          class="form-control dis"
+          id="colFormLabel"
+          placeholder="{{user.first_name}}"
+          disabled
+          readonly
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <label
+        for="colFormLabel"
+        class="col-sm-2 col-form-label mb-2"
+        align="center"
+        >Email</label
+      >
+      <div class="col-sm">
+        <input
+          type="email"
+          class="form-control dis"
+          id="colFormLabel"
+          placeholder="{{user.email}}"
+          disabled
+          readonly
+        />
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <label
+        for="colFormLabel"
+        class="col-sm-2 col-form-label mb-2"
+        align="center"
+        >Height</label
+      >
+      <div class="col-sm">
+        <input
+          type="number"
+          class="form-control dis"
+          id="colFormLabel"
+          placeholder="{%if not user.height %}Height has not been set{%else%} {{user.height}} in {%endif%}"
+          disabled
+          readonly
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <label
+        for="colFormLabel"
+        class="col-sm-2 col-form-label mb-2"
+        align="center"
+        >Weight</label
+      >
+      <div class="col-sm">
+        <input
+          type="number"
+          class="form-control dis"
+          id="colFormLabel"
+          placeholder="{%if not user.weight %}Weight has not been set{%else%} {{user.weight}} lbs {%endif%}"
+          disabled
+          readonly
+        />
+      </div>
+    </div>
+
+    <br />
+
+    <p>
+      Tracking Food since:
+      <span class="font-weight-bold"
+        >{{user.date_joined.strftime('%B %d, %Y!')}}
+      </span>
+    </p>
+  </div>
+
+  <div class="flex-fill border border-light m-2 p-5 rounded">
+    <h2 align="center">Macro Goals</h2>
+    <br />
+    <div class="row">
+      <label
+        for="colFormLabel"
+        class="col-sm-2 col-form-label mb-2"
+        align="center"
+        >Calories</label
+      >
+      <div class="col-sm">
+        <input
+          type="number"
+          class="form-control dis"
+          id="colFormLabel"
+          placeholder="{%if not user.calories %}Calorie goal has not been set{%else%} {{user.calories}}{%endif%}"
+          disabled
+          readonly
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <label
+        for="colFormLabel"
+        class="col-sm-2 col-form-label mb-2"
+        align="center"
+        >Protein
+      </label>
+      <div class="col-sm">
+        <input
+          type="number"
+          class="form-control dis"
+          id="colFormLabel"
+          placeholder="{%if not user.protein %}Protein goal has not been set{%else%} {{user.protein}} g{%endif%}"
+          disabled
+          readonly
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <label
+        for="colFormLabel"
+        class="col-sm-2 col-form-label mb-2"
+        align="center"
+        >Carbs
+      </label>
+      <div class="col-sm">
+        <input
+          type="number"
+          class="form-control dis"
+          id="colFormLabel"
+          placeholder="{%if not user.carbs %}Carb goal has not been set{%else%} {{user.carbs}} g{%endif%}"
+          disabled
+          readonly
+        />
+      </div>
+    </div>
+
+    <div class="row">
+      <label
+        for="colFormLabel"
+        class="col-sm-2 col-form-label mb-2"
+        align="center"
+        >Fat
+      </label>
+      <div class="col-sm">
+        <input
+          type="number"
+          class="form-control dis"
+          id="colFormLabel"
+          placeholder="{%if not user.fat %}Fat goal has not been set{%else%} {{user.fat}} g{%endif%}"
+          disabled
+          readonly
+        />
+      </div>
+    </div>
+  </div>
+  <!-- <div class="flex-fill border border-light m-2 p-5 rounded grow-1">
+    <h4 align="center">Default Colors</h4>
+    <div class="row">
+      <div class="col color-row">
+        <input
+          type="color"
+          class="form-control form-control-color color-select"
+          id="choose_pr_color"
+          value="#0e1a54"
+          disabled
+          readonly
+        />
+        <p></p>
+        <label class="form-label">Background color</label>
+      </div>
+
+      <div class="col color-row">
+        <input
+          type="color"
+          class="form-control form-control-color color-select"
+          id="choose_bg_color"
+          value="#0e1a54"
+          disabled
+          readonly
+        />
+        <p></p>
+        <label class="form-label">Primary color</label>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+<div align="center">
+  <a href="/edit_goals">
+    <button class="btn btn-outline-light font-weight-bold">Edit</button>
+  </a>
+</div>
+
+{% endblock %}

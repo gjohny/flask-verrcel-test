@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block title %}Add food{% endblock %} {% block
+content %}
+<div class="back d-flex">
+  <a href="/" class="back btn btn-outline-light"> < back</a>
+</div>
+<h1 class="subtitle">Create Food</h1>
+
+<div class="w-50">
+  <form method="POST">
+    <div class="form-group">
+      <label for="foodname">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="foodname"
+        name="foodname"
+        placeholder="Name of food"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="cals">Macros</label>
+      <input
+        type="number"
+        class="form-control"
+        id="cals"
+        name="cals"
+        placeholder="Calories per serving"
+      />
+      <input
+        type="number"
+        class="form-control"
+        id="protein"
+        name="protein"
+        placeholder="Protein per serving (grams)"
+      />
+      <input
+        type="number"
+        class="form-control"
+        id="carbs"
+        name="carbs"
+        placeholder="Carbs per serving (grams)"
+      />
+      <input
+        type="number"
+        class="form-control"
+        id="fat"
+        name="fat"
+        placeholder="Fat per serving (grams)"
+      />
+    </div>
+
+    <div class="d-flex">
+      <div class="btn flex-fill">
+        <button type="submit" class="btn btn-outline-light font-weight-bold">
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

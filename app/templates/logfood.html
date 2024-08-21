@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block title %}Log food{% endblock %} {% block
+content %}
+
+<div class="d-flex">
+  <a href="/" class="back btn btn-outline-light"> < back</a>
+</div>
+
+<h1 class="subtitle">Log Food</h1>
+
+<div class="w-50">
+  {%if not food%}
+  <p class="inline">
+    You have no food to log, create one &nbsp;
+    <a href="/createfood">
+      <button type="button" class="btn btn-outline-light font-weight-bold">
+        here!
+      </button>
+    </a>
+  </p>
+  {%else %}
+  <br />
+  <form method="POST" id="log">
+    <select
+      form="log"
+      action="/logfood"
+      method="GET"
+      name="food_option"
+      class="custom-select"
+    >
+      {% for f in food %}
+      <option>{{f.name}}</option>
+      {% endfor %}
+    </select>
+    <h1><br /></h1>
+    <div class="form-group">
+      <label for="servings">Number of Servings</label>
+      <br />
+      <p></p>
+      <input
+        type="number"
+        class="form-control w-50"
+        id="servings"
+        name="servings"
+        value="1"
+      />
+    </div>
+    <br />
+
+    <div class="d-flex">
+      <div class="btn flex-fill">
+        <button type="submit" class="btn btn-outline-light font-weight-bold">
+          Log
+        </button>
+      </div>
+    </div>
+  </form>
+
+  {%endif%}
+</div>
+
+{% endblock %}

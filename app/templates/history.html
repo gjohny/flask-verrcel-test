@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block title %}Log History{% endblock %} {% block
+content %}
+
+<div class="back d-flex">
+  <a href="/" class="back btn btn-outline-light"> < back</a>
+</div>
+
+<h1 class="subtitle">Log History</h1>
+<br />
+{%if not log%}
+<p class="inline">
+  You have no logged food, make one &nbsp;
+  <a href="/logfood">
+    <button type="button" class="btn btn-outline-light font-weight-bold">
+      here!
+    </button>
+  </a>
+</p>
+{%else %}
+<div class="table-responsive-lg">
+  <table
+    class="table table-dark table-hover table-bordered mb-3 p-1 table-striped"
+    action="/history"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Name</th>
+        <th scope="col">Calories</th>
+        <th scope="col">Protein</th>
+        <th scope="col">Carbs</th>
+        <th scope="col">Fat</th>
+        <th scope="col">Servings</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for l in log %}
+
+      <tr>
+        <th scope="row">{{l.date.strftime("%B %d ")}}</th>
+        <td>{{l.food.name}}</td>
+        <td style="word-wrap: break-word; min-width: 160px; max-width: 160px">
+          {{l.food.calories * l.servings}}
+        </td>
+        <td>{{l.food.protien * l.servings}}</td>
+        <td>{{l.food.carbs * l.servings}}</td>
+        <td>{{l.food.fat * l.servings}}</td>
+        <td>{{l.servings}}</td>
+        <td>
+          <div class="d-flex" align="center">
+            <div class="flex-fill">
+              <a href="/edit_log/{{l.id}}">
+                <button class="btn rounded border border-light icon-green">
+                  <i class="fa-solid fa-pen-to-square fa-xl grow"></i>
+                </button>
+              </a>
+            </div>
+            <div class="flex-fill">
+              <a href="/delete/{{l.id}}">
+                <button class="btn rounded border border-light icon-red">
+                  <i class="fa-solid fa-trash-can fa-xl grow"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/logfood" class="btn btn-outline-light font-weight-bold mb-2">
+    Add
+  </a>
+</div>
+
+{%endif%} {% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}Edit{% endblock %} {% block content
+%}
+
+<h1 class="subtitle" align="center">Edit Servings</h1>
+
+<table class="table table-dark table-hover" action="/history">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Name</th>
+      <th scope="col">Calories</th>
+      <th scope="col">Protein</th>
+      <th scope="col">Carbs</th>
+      <th scope="col">Fat</th>
+      <th scope="col">Servings</th>
+      <th scope="col">Save</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{{log.date.strftime("%B %d ")}}</th>
+      <td>{{log.food.name}}</td>
+      <td>{{log.food.calories}}</td>
+      <td>{{log.food.protien}}</td>
+      <td>{{log.food.carbs}}</td>
+      <td>{{log.food.fat}}</td>
+      <form id="edit" method="POST">
+        <td>
+          <input
+            type="number"
+            class="form-control"
+            value="{{log.servings}}"
+            name="new_serving"
+          />
+        </td>
+        <td>
+          <div class="d-flex" align="center">
+            <div class="flex-fill mr-1">
+              <button type="submit" class="btn rounded border border-light icon-green">
+                <i class="fa-solid fa-clipboard-check fa-xl grow"></i>
+              </button>
+            </div>
+        </form>
+            <div class="flex-fill ml-1">
+              <a href="/history">
+                <button class="btn rounded border border-light icon-red">
+                  <i class="fa-solid fa-xmark fa-xl grow"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </td>
+      
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

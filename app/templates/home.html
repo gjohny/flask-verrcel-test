@@ -1,0 +1,95 @@
+{% extends "base.html" %} {% block title %}FoodTracker |{% endblock %} {% block content
+%}
+
+<h1 class="subtitle">Welcome, {{user.first_name}}!</h1>
+<div class="d-flex justify-content-between">
+
+  {%if current_user.calories%}  
+
+  <div class="subheading"><p > Goal Progress:
+    {% if cal_percent >= 100 %}
+    <span class="font-weight-bold subheading"> Complete! </span>
+    {% else %} 
+    <em> en route </em>
+    {% endif %}
+  </p>
+  </div>
+  <div class="subheading">
+    <p> {{tc}} / {{user.calories}} Calories </p>
+  </div>
+</div>
+
+<div class="bars rounded bg-light-subtle m-2">
+  <div class="progress bg-light">
+    <div class="progress-bar " style="width:{{cal_percent}}%">{{cal_percent}}%</div>
+  </div>
+</div>
+
+{%else%}
+
+<div class="subheading"><p > Configure Goals to see progress status!
+</p>
+</div>
+<div class="subheading">
+  <p>  </p>
+</div>
+</div>
+
+<div class="bars rounded bg-light-subtle m-2">
+<div class="progress bg-light">
+  <div class="progress-bar " style="width:100%">Configure calories to see percentage!</div>
+</div>
+</div>
+{%endif%}
+
+
+<br/>
+<div class="rounded row choice " align="center">
+  <div class="items col">
+    <a href="/logfood">
+      <div class="icon-wrapper mb-4">
+        <i class="fa fa-th-list"></i>
+      </div>
+      <div class="project-name">
+        <p>Log Food</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="items col">
+    <a href="/createfood">
+      <div class="icon-wrapper mb-4">
+        <i class="fa fa-plus-circle"> </i>
+      </div>
+      <div class="project-name">
+        <p>Create Food</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="w-100"></div>
+
+  <div class="items col">
+    <a href="/goals">
+    <div class="icon-wrapper mb-4">
+      <i class="fa fa-check-square"></i>
+    </div>
+    <div class="project-name">
+      <p>Edit Goals</p>
+    </div>
+  </a>
+  </div>
+
+  <div class="items col">
+    <a href="/history">
+      <div class="icon-wrapper mb-4">
+        <i class="fa fa-history"></i>
+      </div>
+      <div class="project-name">
+        <p>View History</p>
+      </div>
+    </div>
+  </a>
+</div>
+
+{% endblock %}
