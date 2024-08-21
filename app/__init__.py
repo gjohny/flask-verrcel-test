@@ -14,8 +14,8 @@ DB_NAME = "database.db"
 
 from app import views, models, auth
 
-app.register_blueprint(views, url_prefix='/')
-app.register_blueprint(auth, url_prefix='/')
+# app.register_blueprint(views, url_prefix='/')
+# app.register_blueprint(auth, url_prefix='/')
 
 from .models import User
 
