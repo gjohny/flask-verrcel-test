@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from config import config
+from config import Config
 from flask_migrate import Migrate
 from os import path
 from flask_login import LoginManager
